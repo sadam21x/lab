@@ -1,0 +1,14 @@
+.wrapper {
+  min-height: 100vh;
+  position: relative;
+}
+
+.main {
+  padding: 0 10vw 10vw;
+  margin-top: 4vw;
+
+  @media (max-width: 768px) {
+    padding: 0 5vw 20vw;
+    margin-top: 8vw;
+  }
+}

@@ -13,7 +13,9 @@ const ProjectsPage: NextPage = () => {
     <Layout meta={meta}>
       <h1 className={css.title}>Projects</h1>
       <hr className={css.divider} />
-      <p className={css.intro}>Here are some projects I&apos;ve worked on</p>
+      <p className={css.intro}>
+        Check out some of my works
+      </p>
 
       <div className={css.container}>
         {projects.map((project) => (

@@ -10,6 +10,7 @@ const Navbar = (): JSX.Element => {
   const [menus] = useState([
     { name: 'Home', href: '/' },
     { name: 'Projects', href: '/projects' },
+    { name: 'Download', href: '/download' },
   ])
 
   useEffect(() => {

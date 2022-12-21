@@ -1,5 +1,6 @@
 const illustrations = {
   certificate: require('./illustrations/certificate.jpg'),
+  nextjs: require('./illustrations/nextjs.webp'),
   pharmacy: require('./illustrations/pharmacy.jpg'),
   report: require('./illustrations/report.jpg'),
   socialMedia: require('./illustrations/social-media.jpg'),
@@ -19,6 +20,7 @@ const logos = {
   postgresql: require('./logos/postgresql.svg'),
   react: require('./logos/react.svg'),
   sass: require('./logos/sass.svg'),
+  tailwind: require('./logos/tailwind.svg'),
   typescript: require('./logos/typescript.svg'),
   ubuntu: require('./logos/ubuntu.svg'),
   vue: require('./logos/vue.svg'),

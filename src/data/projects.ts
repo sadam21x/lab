@@ -2,6 +2,28 @@ import images from '@/assets/images'
 
 const projects = [
   {
+    title: 'Sadam LAB',
+    type: 'WEB',
+    featured: false,
+    thumbnail: images.illustrations.nextjs,
+    org: 'Sadam',
+    technologies: [
+      {
+        name: 'Next.js',
+        logo: images.logos.nextjs,
+      },
+      {
+        name: 'Tailwind',
+        logo: images.logos.tailwind,
+      },
+      {
+        name: 'SCSS',
+        logo: images.logos.sass,
+      },
+    ],
+    description: 'Yes, this is where we are right now :D I will continue to develop this project, adding new awesome features in the near future, stay tuned!',
+  },
+  {
     title: 'LayanObat Mitra API',
     type: 'API',
     featured: true,
@@ -15,7 +37,7 @@ const projects = [
       {
         name: 'MySQL',
         logo: images.logos.mysql,
-      }
+      },
     ],
     description: 'An application programming interface (API) for pharmacy management applications. Some key features include stock management, orders, sales, and reporting.',
   },

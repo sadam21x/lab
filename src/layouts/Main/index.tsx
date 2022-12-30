@@ -6,12 +6,12 @@ import ScrollToTop from '@/components/ScrollToTop'
 import css from './styles.module.scss'
 
 type Props = {
-  children: React.ReactNode,
+  children: React.ReactNode
   meta?: {
-    title?: string,
-    description?: string,
-    keywords?: string,
-  },
+    title?: string
+    description?: string
+    keywords?: string
+  }
 }
 
 const variants = {
@@ -21,9 +21,13 @@ const variants = {
 }
 
 const Layout = (props: Props): JSX.Element => {
-  const title = props.meta?.title ? `${props.meta.title} | Sadam LAB` : 'Sadam LAB'
-  const description = props.meta?.description || 'Sadam\'s personal website'
-  const keywords = props.meta?.keywords || 'Sadam, Software Engineer, Web Developer, Cloud, Bali, Indonesia'
+  const title = props.meta?.title
+    ? `${props.meta.title} | Sadam LAB`
+    : 'Sadam LAB'
+  const description = props.meta?.description || "Sadam's personal website"
+  const keywords =
+    props.meta?.keywords ||
+    'Sadam, Software Engineer, Web Developer, Cloud, Bali, Indonesia'
 
   return (
     <>
@@ -33,7 +37,6 @@ const Layout = (props: Props): JSX.Element => {
         <title>{title}</title>
       </Head>
 
-
       <div className={`${css.wrapper} font-rubik`}>
         <Navbar />
         <motion.main
@@ -41,13 +44,11 @@ const Layout = (props: Props): JSX.Element => {
           animate='enter'
           exit='exit'
           variants={variants}
-          transition={{ type: 'linear' }}
-          className={css.main}
-        >
+          transition={{ type: 'spring', damping: 20, stiffness: 100 }}
+          className={css.main}>
           {props.children}
         </motion.main>
         <Footer />
-        
         <ScrollToTop />
       </div>
     </>

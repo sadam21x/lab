@@ -1,0 +1,88 @@
+---
+title: Nginx Server Block for Laravel
+description: Nginx server block configuration for Laravel project
+date: '2023-01-01'
+tags: [
+  { name: 'Nginx', color: 'green'},
+  { name: 'Laravel', color: 'red' },
+]
+---
+
+This is example of an Nginx server block for Laravel project where we define both http and https configuration in one file.
+
+<br/>
+
+```plaintext
+server {
+  listen 80;
+  listen [::]:80;
+  server_name awesomewebsite.com;
+  root /var/www/html/public;
+
+  add_header X-Frame-Options "SAMEORIGIN";
+  add_header X-Content-Type-Options "nosniff";
+
+  index index.php;
+
+  charset utf-8;
+
+  location / {
+    try_files $uri $uri/ /index.php?$query_string;
+  }
+
+  location = /favicon.ico { access_log off; log_not_found off; }
+  location = /robots.txt  { access_log off; log_not_found off; }
+
+  error_page 404 /index.php;
+
+  location ~ \.php$ {
+    fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
+    fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+    include fastcgi_params;
+    fastcgi_read_timeout 6000;
+  }
+
+  location ~ /\.(?!well-known).* {
+    deny all;
+  }
+}
+
+server {
+  listen 443 ssl http2;
+  listen [::]:443 ssl http2;
+  server_name awesomewebsite.com;
+  root /var/www/html/public;
+
+  ssl_certificate /path/to/cert.pem;
+  ssl_certificate_key /path/to/key.pem;
+  ssl_client_certificate /path/to/file.crt;
+  ssl_verify_client on;
+
+  add_header X-Frame-Options "SAMEORIGIN";
+  add_header X-Content-Type-Options "nosniff";
+
+  index index.php;
+
+  charset utf-8;
+
+  location / {
+    try_files $uri $uri/ /index.php?$query_string;
+  }
+
+  location = /favicon.ico { access_log off; log_not_found off; }
+  location = /robots.txt  { access_log off; log_not_found off; }
+
+  error_page 404 /index.php;
+
+  location ~ \.php$ {
+    fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
+    fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+    include fastcgi_params;
+    fastcgi_read_timeout 6000;
+  }
+
+  location ~ /\.(?!well-known).* {
+    deny all;
+  }
+}
+```

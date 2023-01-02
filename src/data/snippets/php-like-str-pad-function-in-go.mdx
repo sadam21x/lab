@@ -1,0 +1,50 @@
+---
+title: PHP-like str_pad Function in Go
+description: A function to pad a string with another string to a certain length.
+date: '2023-01-01'
+tags: [
+  { name: 'Go', color: '#00ADD8' },
+]
+---
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	// Default: pad right
+	fmt.Println(StrPad("Hello", 8, ".", ""))
+
+	// Pad left
+	fmt.Println(StrPad("Hello", 8, ".", "STR_PAD_LEFT"))
+
+	// Pad both
+	fmt.Println(StrPad("Hello", 8, ".", "STR_PAD_BOTH"))
+}
+
+func StrPad(input string, pad_length int, pad_string string, pad_type string) string {
+	var fill string
+
+	if len(input) > pad_length {
+		return input
+	}
+
+	for i := 1; i <= (pad_length - len(input)); i = i + len(pad_string) {
+		fill += pad_string
+	}
+
+	switch pad_type {
+	case "STR_PAD_LEFT":
+		return fill + input
+	case "STR_PAD_BOTH":
+		if (pad_length % 2) == 0 {
+			return fill[:len(fill)/2] + input + fill[len(fill)/2:]
+		}
+
+		return fill[:(len(fill)+1)/2] + input + fill[(len(fill)+1)/2:]
+	default:
+		return input + fill
+	}
+}
+```

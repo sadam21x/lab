@@ -1,18 +1,20 @@
 import Head from 'next/head'
 
 type Props = {
-  children: React.ReactNode,
+  children: React.ReactNode
   meta?: {
-    title?: string,
-    description?: string,
-    keywords?: string,
-  },
+    title?: string
+    description?: string
+    keywords?: string
+  }
 }
 
-const Layout = (props: Props): JSX.Element => {
+function ErrorLayout(props: Props) {
   const title = props.meta?.title ? props.meta.title : 'Sadam LAB'
-  const description = props.meta?.description || 'Sadam\'s personal website'
-  const keywords = props.meta?.keywords || 'Sadam, Software Engineer, Web Developer, Cloud, Bali, Indonesia'
+  const description = props.meta?.description || "Sadam's personal website"
+  const keywords =
+    props.meta?.keywords ||
+    'Sadam, Software Engineer, Web Developer, Cloud, Bali, Indonesia'
 
   return (
     <>
@@ -27,4 +29,4 @@ const Layout = (props: Props): JSX.Element => {
   )
 }
 
-export default Layout
+export default ErrorLayout

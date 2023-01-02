@@ -21,7 +21,8 @@ const projects = [
         logo: images.logos.sass,
       },
     ],
-    description: 'Yes, this is where we are right now :D I will continue to develop this project, adding new awesome features in the near future, stay tuned!',
+    description:
+      'Yes, this is where we are right now :D I will continue to develop this project, adding new awesome features in the near future, stay tuned!',
   },
   {
     title: 'LayanObat Mitra API',
@@ -39,7 +40,8 @@ const projects = [
         logo: images.logos.mysql,
       },
     ],
-    description: 'An application programming interface (API) for pharmacy management applications. Some key features include stock management, orders, sales, and reporting.',
+    description:
+      'An application programming interface (API) for pharmacy management applications. Some key features include stock management, orders, sales, and reporting.',
   },
   {
     title: 'Airlangga Tracer Study System',
@@ -61,7 +63,8 @@ const projects = [
         logo: images.logos.postgresql,
       },
     ],
-    description: 'A web-based application to collect data on alumni careers after college through online surveys. Some key features include survey creation, email blaster, and reporting.',
+    description:
+      'A web-based application to collect data on alumni careers after college through online surveys. Some key features include survey creation, email blaster, and reporting.',
   },
   {
     title: 'Career Counseling App',
@@ -83,7 +86,8 @@ const projects = [
         logo: images.logos.mysql,
       },
     ],
-    description: 'A web-based chat application to help students and alumni find their career paths by chatting with counselors provided by the university. Some key features include counseling scheduling, invitation email, and chat room.',
+    description:
+      'A web-based chat application to help students and alumni find their career paths by chatting with counselors provided by the university. Some key features include counseling scheduling, invitation email, and chat room.',
   },
   {
     title: 'E-Sertifikat Fakultas Vokasi',
@@ -101,7 +105,8 @@ const projects = [
         logo: images.logos.mysql,
       },
     ],
-    description: 'A web-based application used by the Faculty to create, manage and distribute e-certificates to students.',
+    description:
+      'A web-based application used by the Faculty to create, manage and distribute e-certificates to students.',
   },
 ]
 

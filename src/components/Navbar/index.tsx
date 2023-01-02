@@ -4,7 +4,7 @@ import { FaLaptopCode, FaGithub } from 'react-icons/fa'
 import { CgMenuRight } from 'react-icons/cg'
 import css from './styles.module.scss'
 
-const Navbar = (): JSX.Element => {
+function Navbar() {
   const [openMobileMenu, setOpenMobileMenu] = useState(false)
 
   const [menus] = useState([
@@ -18,7 +18,7 @@ const Navbar = (): JSX.Element => {
     // Close mobile menu on screen resize
     window.addEventListener('resize', () => {
       setOpenMobileMenu(false)
-    });
+    })
 
     // Close mobile menu on scroll
     window.addEventListener('scroll', () => {
@@ -44,7 +44,7 @@ const Navbar = (): JSX.Element => {
 
       {/* Desktop Menu */}
       <div className={css.menu}>
-        {menus.map(menu => (
+        {menus.map((menu) => (
           <Link key={menu.name} href={menu.href} className={css.link}>
             {menu.name}
           </Link>
@@ -54,8 +54,7 @@ const Navbar = (): JSX.Element => {
           href='https://github.com/sadam21x/lab'
           target='_blank'
           rel='noreferrer'
-          className={css['github-link']}
-        >
+          className={css['github-link']}>
           <FaGithub />
         </a>
       </div>
@@ -68,7 +67,8 @@ const Navbar = (): JSX.Element => {
       />
 
       {/* Mobile Menu */}
-      <div className={`${css['mobile-menu']} ${openMobileMenu ? css.active : ''}`}>
+      <div
+        className={`${css['mobile-menu']} ${openMobileMenu ? css.active : ''}`}>
         {/* Site Logo */}
         <Link href='/' className={`${css['site-logo']} ${css.mobile}`}>
           <FaLaptopCode className={css.icon} />
@@ -76,7 +76,7 @@ const Navbar = (): JSX.Element => {
           <span>L &nbsp;A &nbsp;B</span>
         </Link>
 
-        {menus.map(menu => (
+        {menus.map((menu) => (
           <Link key={menu.name} href={menu.href} className={css.link}>
             {menu.name}
           </Link>
@@ -86,8 +86,7 @@ const Navbar = (): JSX.Element => {
           href='https://github.com/sadam21x/lab'
           target='_blank'
           rel='noreferrer'
-          className={css['mobile-github-link']}
-        >
+          className={css['mobile-github-link']}>
           <FaGithub />
           GitHub
         </a>

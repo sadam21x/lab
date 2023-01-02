@@ -17,6 +17,7 @@ specifiers:
   next: ^13.1.1
   next-mdx-remote: ^4.2.0
   postcss: ^8.4.20
+  prettier: ^2.8.1
   react: ^18.2.0
   react-dom: ^18.2.0
   react-icons: ^4.7.1
@@ -56,6 +57,7 @@ devDependencies:
   eslint-config-prettier: 8.5.0_eslint@8.31.0
   husky: 8.0.2
   postcss: 8.4.20
+  prettier: 2.8.1
   sass: 1.57.1
   tailwindcss: 3.2.4_postcss@8.4.20
   typescript: 4.9.4
@@ -3556,6 +3558,12 @@ packages:
   /prelude-ls/1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
+    dev: true
+
+  /prettier/2.8.1:
+    resolution: {integrity: sha512-lqGoSJBQNJidqCHE80vqZJHWHRFoNYsSpP9AjFhlhi9ODCJA541svILes/+/1GM3VaL/abZi7cpFzOpdR9UPKg==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
     dev: true
 
   /prop-types/15.8.1:

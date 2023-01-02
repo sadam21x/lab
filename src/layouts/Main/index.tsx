@@ -20,7 +20,7 @@ const variants = {
   exit: { opacity: 0, x: 0, y: -100 },
 }
 
-const Layout = (props: Props): JSX.Element => {
+function MainLayout(props: Props) {
   const title = props.meta?.title
     ? `${props.meta.title} | Sadam LAB`
     : 'Sadam LAB'
@@ -55,4 +55,4 @@ const Layout = (props: Props): JSX.Element => {
   )
 }
 
-export default Layout
+export default MainLayout

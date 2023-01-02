@@ -2,7 +2,7 @@ import type { GetStaticProps } from 'next'
 import type { Snippet } from '@/types/snippet'
 import Link from 'next/link'
 import { getSnippets } from '@/utils/snippet'
-import Layout from '@/layouts/Main'
+import MainLayout from '@/layouts/Main'
 import css from './styles.module.scss'
 
 type Props = {
@@ -26,7 +26,7 @@ function SnippetsPage(props: Props) {
   }
 
   return (
-    <Layout meta={meta}>
+    <MainLayout meta={meta}>
       <h1 className={css.title}>Snippets</h1>
       <hr className={css.divider} />
 
@@ -56,7 +56,7 @@ function SnippetsPage(props: Props) {
           </Link>
         ))}
       </div>
-    </Layout>
+    </MainLayout>
   )
 }
 

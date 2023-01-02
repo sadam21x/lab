@@ -1,21 +1,18 @@
-import type { NextPage } from 'next'
-import Layout from '@/layouts/Main'
 import projects from '@/data/projects'
+import MainLayout from '@/layouts/Main'
 import ProjectCard from '@/components/ProjectCard'
 import css from './styles.module.scss'
 
-const ProjectsPage: NextPage = () => {
+function ProjectsPage() {
   const meta = {
     title: 'Projects',
   }
 
   return (
-    <Layout meta={meta}>
+    <MainLayout meta={meta}>
       <h1 className={css.title}>Projects</h1>
       <hr className={css.divider} />
-      <p className={css.intro}>
-        Check out some of my works
-      </p>
+      <p className={css.intro}>Check out some of my works</p>
 
       <div className={css.container}>
         {projects.map((project) => (
@@ -30,7 +27,7 @@ const ProjectsPage: NextPage = () => {
           />
         ))}
       </div>
-    </Layout>
+    </MainLayout>
   )
 }
 

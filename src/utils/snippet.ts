@@ -49,7 +49,7 @@ export async function findSnippet(slug: string): Promise<Snippet | null> {
 
 /**
  * Get all snippets
- * 
+ *
  * @returns {Promise<Snippet[]>} - Promise that resolves with a Snippets data
  */
 export async function getSnippets(): Promise<Snippet[]> {

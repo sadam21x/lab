@@ -13,7 +13,7 @@ type Props = {
   description: string
 }
 
-const ProjectCard = (props: Props): JSX.Element => {
+function ProjectCard(props: Props) {
   return (
     <div className={`${css.card} bg-base-100 shadow-xl`}>
       <div className={css.thumbnail}>
@@ -26,11 +26,7 @@ const ProjectCard = (props: Props): JSX.Element => {
         <div className={css.technologies}>
           {props.technologies.map((tech) => (
             <div key={tech.name} className='tooltip' data-tip={tech.name}>
-              <Image
-                src={tech.logo}
-                alt={tech.name}
-                className={css.logo}
-              />
+              <Image src={tech.logo} alt={tech.name} className={css.logo} />
             </div>
           ))}
         </div>

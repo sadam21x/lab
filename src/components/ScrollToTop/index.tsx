@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { FaArrowCircleUp } from 'react-icons/fa'
 import css from './styles.module.scss'
 
-const ScrollToTop = (): JSX.Element => {
+function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false)
 
   const toggleVisibility = () => {
@@ -22,10 +22,11 @@ const ScrollToTop = (): JSX.Element => {
 
   return (
     <div
-      className={`${css.button} ${isVisible && css.visible} tooltip tooltip-left`}
+      className={`${css.button} ${
+        isVisible && css.visible
+      } tooltip tooltip-left`}
       data-tip='Scroll to top'
-      onClick={scrollToTop}
-    >
+      onClick={scrollToTop}>
       <FaArrowCircleUp className={css.icon} />
     </div>
   )

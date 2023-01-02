@@ -1,10 +1,8 @@
-import type { NextPage } from 'next'
-import Link from 'next/link'
 import { GrDocumentPdf } from 'react-icons/gr'
-import Layout from '@/layouts/Main'
+import MainLayout from '@/layouts/Main'
 import css from './styles.module.scss'
 
-const DownloadPage: NextPage = () => {
+function DownloadPage() {
   const meta = {
     title: 'Download',
   }
@@ -28,10 +26,10 @@ const DownloadPage: NextPage = () => {
   ]
 
   return (
-    <Layout meta={meta}>
+    <MainLayout meta={meta}>
       <h1 className={css.title}>Download</h1>
       <hr className={css.divider} />
-      
+
       <div className={css.container}>
         {files.map((file) => (
           <a
@@ -39,14 +37,13 @@ const DownloadPage: NextPage = () => {
             href={file.url}
             className={css.item}
             target='_blank'
-            rel='noopener noreferrer'
-          >
+            rel='noopener noreferrer'>
             {file.icon}
             <p className={css.filename}>{file.name}</p>
           </a>
         ))}
       </div>
-    </Layout>
+    </MainLayout>
   )
 }
 

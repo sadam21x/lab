@@ -1,6 +1,5 @@
 import type { GetStaticProps } from 'next'
 import type { Snippet } from '@/types/snippet'
-import { useEffect } from 'react'
 import Link from 'next/link'
 import { getSnippets } from '@/utils/snippet'
 import Layout from '@/layouts/Main'
@@ -25,10 +24,6 @@ function SnippetsPage(props: Props) {
   const meta = {
     title: 'Snippets',
   }
-
-  useEffect(() => {
-    console.log(props)
-  }, [props])
 
   return (
     <Layout meta={meta}>

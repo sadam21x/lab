@@ -47,7 +47,6 @@ export const getStaticProps: GetStaticProps<Props, Params> = async ({
 
     const source = await serialize(snippet.content, {
       mdxOptions: {
-        development: false,
         rehypePlugins: [
           rehypeSlug,
           [

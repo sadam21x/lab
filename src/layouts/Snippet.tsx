@@ -1,6 +1,5 @@
 import type { Snippet } from '@/types/snippet'
 import MainLayout from '@/layouts/Main'
-import css from './styles.module.scss'
 
 type Props = {
   snippet: Snippet
@@ -14,10 +13,10 @@ const SnippetLayout = (props: Props): JSX.Element => {
 
   return (
     <MainLayout meta={meta}>
-      <h1 className={css.title}>{props.snippet.title}</h1>
-      <hr className={css.divider} />
+      <h1 className='font-bold text-xl lg:text-2xl'>{props.snippet.title}</h1>
+      <hr className='mt-4 mb-8' />
 
-      <article className={css.content}>{props.children}</article>
+      <article>{props.children}</article>
     </MainLayout>
   )
 }

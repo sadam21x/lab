@@ -3,7 +3,7 @@ import type { Snippet } from '@/types/snippet'
 import Link from 'next/link'
 import { getSnippets } from '@/utils/snippet'
 import MainLayout from '@/layouts/Main'
-import css from './styles.module.scss'
+import ProjectCard from '@/components/ProjectCard'
 
 type Props = {
   snippets: Snippet[]
@@ -27,32 +27,18 @@ function SnippetsPage(props: Props) {
 
   return (
     <MainLayout meta={meta}>
-      <h1 className={css.title}>Snippets</h1>
-      <hr className={css.divider} />
+      <h1 className='font-semibold text-xl lg:text-2xl'>Snippets</h1>
 
-      <div className={css.container}>
+      <hr className='my-4' />
+
+      <div className='flex flex-col flex-wrap gap-x-4 gap-y-8 mt-6 lg:flex-row'>
         {props.snippets.map((snippet: any) => (
-          <Link
-            key={snippet.title}
-            href={`snippets/${snippet.slug}`}
-            className={css.card}>
-            <h1 className={css['card-title']}>{snippet.title}</h1>
-
-            <p className={css['card-description']}>{snippet.description}</p>
-
-            <div className={css['card-tags']}>
-              {snippet.tags.map((tag: any) => (
-                <div key={tag.name} className={css.tag}>
-                  <span
-                    className={css.circle}
-                    style={{
-                      backgroundColor: tag.color,
-                    }}
-                  />
-                  <span className={css.name}>{tag.name}</span>
-                </div>
-              ))}
-            </div>
+          <Link key={snippet.title} href={`snippets/${snippet.slug}`}>
+            <ProjectCard
+              title={snippet.title}
+              description={snippet.description}
+              tags={snippet.tags}
+            />
           </Link>
         ))}
       </div>

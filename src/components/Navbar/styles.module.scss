@@ -1,88 +1,25 @@
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5vw 10vw;
-
-  @media (max-width: 768px) {
-    padding: 5vw;
-  }
-}
-
-.site-logo {
-  display: flex;
-  align-items: center;
-  column-gap: 0.5vw;
-  font-size: 1.7vw;
-  font-weight: 600;
-
-  &.mobile {
-    margin-bottom: 5vw;
-  }
-
-  .icon {
-    font-size: 2.5vw;
-  }
-
-  span {
-    position: relative;
-    bottom: 0.3vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 0.15vw;
-    font-size: 0.8vw;
-    padding: 0 0.3vw;
-  }
-
-  @media (max-width: 768px) {
-    font-size: 4.5vw;
-    column-gap: 1.5vw;
-
-    .icon {
-      font-size: 7vw;
-    }
-
-    span {
-      bottom: 1vw;
-      border-radius: 0.3vw;
-      font-size: 2vw;
-      padding: 0 0.8vw;
-    }
-  }
-}
-
-.menu {
-  display: flex;
-  align-items: center;
-  column-gap: 2vw;
-
-  @media (max-width: 768px) {
-    display: none;
-  }
-}
+$tw-blue-700: rgb(29 78 216);
 
 .link {
   position: relative;
-  font-size: 1.2vw;
-  font-weight: 400;
+  font-size: 1rem;
+  font-weight: 500;
   transition: all 0.3s ease-in-out;
 
   &::after {
     content: '';
     width: 0;
-    height: 0.208vw;
+    height: 0.2rem;
     position: absolute;
-    bottom: -0.75vw;
+    bottom: -0.5rem;
     left: 50%;
-    background-color: #1e88e5;
-    border-radius: 0.138vw;
+    background-color: $tw-blue-700;
+    border-radius: 0.1rem;
     transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
   }
 
   &:hover {
-    color: #1e88e5;
-    font-weight: 500;
+    color: $tw-blue-700;
   }
 
   &:hover::after {
@@ -90,29 +27,8 @@
     left: 0;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1023px) {
     width: max-content;
-    font-size: 4vw;
-
-    &::after {
-      height: 0.5vw;
-      bottom: -1.5vw;
-      border-radius: 0.15vw;
-    }
-  }
-}
-
-.github-link {
-  font-size: 2vw;
-}
-
-.mobile-menu-toggle {
-  display: block;
-  font-size: 7vw;
-  cursor: pointer;
-
-  @media (min-width: 769px) {
-    display: none;
   }
 }
 
@@ -125,31 +41,13 @@
   left: -100%;
   bottom: 0;
   flex-direction: column;
-  row-gap: 7vw;
+  row-gap: 2.5rem;
   background-color: white;
   box-shadow: 0px 4px 32px rgba(0, 0, 0, 0.1);
   transition: left 0.3s ease-in-out;
-  padding: 7.5vw 5vw;
+  padding: 1.75rem 2rem;
 
   &.active {
     left: 0;
   }
-
-  @media (min-width: 769px) {
-    display: none;
-  }
-}
-
-.mobile-github-link {
-  width: max-content;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  column-gap: 1.5vw;
-  background-color: black;
-  color: white;
-  border-radius: 4vw;
-  font-size: 3vw;
-  font-weight: 500;
-  padding: 1vw 4vw;
 }

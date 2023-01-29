@@ -3,7 +3,6 @@ import { motion } from 'framer-motion'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import ScrollToTop from '@/components/ScrollToTop'
-import css from './styles.module.scss'
 
 type Props = {
   children: React.ReactNode
@@ -37,7 +36,7 @@ function MainLayout(props: Props) {
         <title>{title}</title>
       </Head>
 
-      <div className={`${css.wrapper} font-rubik`}>
+      <div className='relative max-w-[1920px] min-h-screen font-rubik mx-auto'>
         <Navbar />
         <motion.main
           initial='hidden'
@@ -45,7 +44,7 @@ function MainLayout(props: Props) {
           exit='exit'
           variants={variants}
           transition={{ type: 'spring', damping: 20, stiffness: 100 }}
-          className={css.main}>
+          className='px-6 pb-20 mt-8 lg:px-32 lg:pb-24 lg:mt-16'>
           {props.children}
         </motion.main>
         <Footer />

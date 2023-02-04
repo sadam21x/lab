@@ -23,8 +23,7 @@ function ScrollToTop() {
     <div
       className={`${
         isVisible ? 'block' : 'hidden'
-      } tooltip tooltip-left fixed bottom-8 right-4 cursor-pointer lg:bottom-6 lg:right-8`}
-      data-tip='Scroll to top'
+      } fixed bottom-8 right-4 cursor-pointer lg:bottom-6 lg:right-8`}
       onClick={scrollToTop}>
       <FaArrowCircleUp className='w-8 h-auto lg:w-10' />
     </div>

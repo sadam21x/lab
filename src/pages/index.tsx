@@ -1,12 +1,30 @@
+import type { GetStaticProps } from 'next'
+import type { Project } from '@/types/project'
+import Link from 'next/link'
 import Image from 'next/image'
 import { FaGithubAlt, FaLinkedin, FaTelegram } from 'react-icons/fa'
 import { MdAlternateEmail } from 'react-icons/md'
+import { getProjects } from '@/utils/project'
 import images from '@/assets/images'
-import projects from '@/data/projects'
 import MainLayout from '@/layouts/Main'
 import ProjectCard from '@/components/ProjectCard'
 
-function HomePage() {
+type Props = {
+  projects: Project[]
+}
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const projects = await getProjects()
+  projects.sort((a: any, b: any) => (a.date > b.date ? -1 : 1))
+
+  return {
+    props: {
+      projects,
+    },
+  }
+}
+
+function HomePage(props: Props) {
   const contacts = [
     {
       title: 'Email',
@@ -30,7 +48,7 @@ function HomePage() {
     },
   ]
 
-  const featuredProjects = projects.filter((project) => project.featured)
+  const featuredProjects = props.projects.filter((project) => project.featured)
 
   return (
     <MainLayout>
@@ -127,14 +145,15 @@ function HomePage() {
       <div className='mt-16'>
         <h1 className='font-semibold text-lg lg:text-2xl'>Featured Projects</h1>
 
-        <div className='flex flex-wrap gap-8 mt-8'>
+        <div className='flex flex-wrap gap-6 mt-8'>
           {featuredProjects.map((project) => (
-            <ProjectCard
-              key={project.title}
-              title={project.title}
-              description={project.description}
-              tags={project.tags}
-            />
+            <Link key={project.title} href={`projects/${project.slug}`} className='flex'>
+              <ProjectCard
+                title={project.title}
+                description={project.description}
+                tags={project.tags}
+              />
+            </Link>
           ))}
         </div>
       </div>

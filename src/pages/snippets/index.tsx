@@ -33,7 +33,7 @@ function SnippetsPage(props: Props) {
 
       <div className='flex flex-col flex-wrap gap-x-4 gap-y-8 mt-6 lg:flex-row'>
         {props.snippets.map((snippet: any) => (
-          <Link key={snippet.title} href={`snippets/${snippet.slug}`}>
+          <Link key={snippet.title} href={`snippets/${snippet.slug}`} className='flex'>
             <ProjectCard
               title={snippet.title}
               description={snippet.description}

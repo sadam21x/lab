@@ -12,9 +12,9 @@ function ProjectCard(props: Props) {
     <div className='w-full min-h-16 flex flex-col bg-white rounded-md shadow-sm border-b-4 border-b-transparent cursor-pointer p-6 lg:w-[22rem] lg:p-4 hover:border-b-blue-500'>
       <h1 className='font-semibold text-base'>{props.title}</h1>
 
-      <p className='text-base mt-4 lg:mt-3'>{props.description}</p>
+      <p className='text-base my-6 lg:my-4'>{props.description}</p>
 
-      <div className='flex flex-wrap justify-self-end gap-4 mt-6'>
+      <div className='flex flex-wrap gap-4 mt-auto'>
         {props.tags.map((tag) => (
           <div key={tag.name} className='flex items-center gap-x-2'>
             <span

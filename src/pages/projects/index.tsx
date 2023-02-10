@@ -30,10 +30,13 @@ function ProjectsPage(props: Props) {
       <h1 className='font-semibold text-xl lg:text-2xl'>Projects</h1>
       <hr className='my-4' />
       <p className='text-base lg:text-lg'>Check out some of my works</p>
-      
+
       <div className='flex flex-col flex-wrap gap-x-4 gap-y-8 mt-6 lg:flex-row'>
         {props.projects.map((project) => (
-          <Link key={project.title} href={`projects/${project.slug}`} className='flex'>
+          <Link
+            key={project.title}
+            href={`projects/${project.slug}`}
+            className='flex'>
             <ProjectCard
               title={project.title}
               description={project.description}

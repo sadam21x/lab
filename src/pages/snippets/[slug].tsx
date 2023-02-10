@@ -4,11 +4,10 @@ import type { Snippet } from '@/types/snippet'
 
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
-import rehypeAutolinkHeadings from 'rehype-autolink-headings'
-import rehypeHighlight from 'rehype-highlight'
 import rehypeSlug from 'rehype-slug'
+import rehypeHighlight from 'rehype-highlight'
 import { getSlugs, findSnippet } from '@/utils/snippet'
-import SnippetLayout from '@/layouts/Snippet'
+import PostLayout from '@/layouts/Post'
 
 import 'highlight.js/styles/github-dark.css'
 
@@ -47,21 +46,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async ({
 
     const source = await serialize(snippet.content, {
       mdxOptions: {
-        rehypePlugins: [
-          rehypeSlug,
-          [
-            rehypeAutolinkHeadings,
-            {
-              properties: {
-                ariaHidden: true,
-                className: ['anchor'],
-                tabIndex: -1,
-              },
-              behaviour: 'wrap',
-            },
-          ],
-          rehypeHighlight,
-        ],
+        rehypePlugins: [rehypeSlug, rehypeHighlight],
       },
     })
 
@@ -78,9 +63,9 @@ export const getStaticProps: GetStaticProps<Props, Params> = async ({
 
 function SnippetPage(props: Props) {
   return (
-    <SnippetLayout snippet={props.snippet}>
+    <PostLayout title={props.snippet.title}>
       <MDXRemote {...props.source} />
-    </SnippetLayout>
+    </PostLayout>
   )
 }
 

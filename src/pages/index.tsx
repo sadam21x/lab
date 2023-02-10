@@ -147,7 +147,10 @@ function HomePage(props: Props) {
 
         <div className='flex flex-wrap gap-6 mt-8'>
           {featuredProjects.map((project) => (
-            <Link key={project.title} href={`projects/${project.slug}`} className='flex'>
+            <Link
+              key={project.title}
+              href={`projects/${project.slug}`}
+              className='flex'>
               <ProjectCard
                 title={project.title}
                 description={project.description}

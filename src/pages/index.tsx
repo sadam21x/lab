@@ -72,7 +72,7 @@ function HomePage(props: Props) {
         {/* Name & Title */}
         <div className='font-semibold text-center mt-4 lg:text-left lg:ml-4 lg:mt-20'>
           <p className='text-2xl'>Sadam</p>
-          <p className='text-lg text-blue-800'>Web Developer</p>
+          <p className='text-lg text-blue-800'>Software Engineer</p>
         </div>
 
         {/* Contacts */}

@@ -15,7 +15,7 @@ const PostLayout = (props: Props): JSX.Element => {
       <h1 className='font-bold text-xl lg:text-2xl'>{props.title}</h1>
       <hr className='mt-4 mb-8' />
 
-      <article className='prose lg:prose-xl'>{props.children}</article>
+      <div className='prose max-w-none'>{props.children}</div>
     </MainLayout>
   )
 }
